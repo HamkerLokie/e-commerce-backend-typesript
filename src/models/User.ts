@@ -41,13 +41,15 @@ const UserSchema = new mongoose.Schema(
 
 UserSchema.virtual('age').get(function () {
   const today = new Date()
-  const dob = this.dob
+
+  const dob: Date = this.dob
   let age = today.getFullYear() - dob.getFullYear()
 
   if (today.getMonth() <= dob.getMonth() && today.getDate() < dob.getDate()) {
     age--
   }
 
+  
   return age
 })
 

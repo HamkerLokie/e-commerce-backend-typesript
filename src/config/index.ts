@@ -12,6 +12,7 @@ export interface EnvironmentVariables {
   CLOUDINARY_NAME: string
   CLOUDINARY_API_KEY: string
   CLOUDINARY_API_SECRET: string
+  PRODUCT_PER_PAGE:string
 }
 
 export const {
@@ -24,5 +25,6 @@ export const {
   REFRESH_TOKEN_EXPIRY,
   CLOUDINARY_NAME,
   CLOUDINARY_API_KEY,
-  CLOUDINARY_API_SECRET
+  CLOUDINARY_API_SECRET,
+  PRODUCT_PER_PAGE
 }: EnvironmentVariables = process.env as any
