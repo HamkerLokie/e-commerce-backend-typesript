@@ -9,7 +9,7 @@ import { adminOnly } from '../middlewares/auth.js'
 
 const app = express.Router()
 
-app.post('/login', newUser)
+app.post('/new', newUser)
 app.post('/all', adminOnly, getAllUser)
 app.route('/:id').get(getUser).delete(adminOnly, deleteUser)
 

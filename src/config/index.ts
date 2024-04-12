@@ -12,6 +12,7 @@ export interface EnvironmentVariables {
   CLOUDINARY_NAME: string
   CLOUDINARY_API_KEY: string
   CLOUDINARY_API_SECRET: string
+  STRIPE_KEY:string
   PRODUCT_PER_PAGE:string
 }
 
@@ -26,5 +27,6 @@ export const {
   CLOUDINARY_NAME,
   CLOUDINARY_API_KEY,
   CLOUDINARY_API_SECRET,
-  PRODUCT_PER_PAGE
+  PRODUCT_PER_PAGE,
+  STRIPE_KEY
 }: EnvironmentVariables = process.env as any

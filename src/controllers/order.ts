@@ -7,15 +7,15 @@ import ErrorHandler from '../utils/utility-class.js'
 import { myCache } from '../app.js'
 
 export const myOrders = TryCatch(async (req, res, next) => {
-  const { id: usera } = req.query
+  const { id: user } = req.query
 
-  const key = `my-orders-${usera}`
+  const key = `my-orders-${user}`
 
   let orders = []
 
   if (myCache.has(key)) orders = JSON.parse(myCache.get(key) as string)
   else {
-    orders = await Order.find({ usera })
+    orders = await Order.find({ user })
     myCache.set(key, JSON.stringify(orders))
   }
   return res.status(200).json({
